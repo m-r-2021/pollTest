@@ -10,14 +10,14 @@
     </x-slot>
 
     @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     @if (Auth::user()->canVote)
         <div class="py-12">
@@ -207,7 +207,7 @@
                         <div>
 
                             @php
-                            $i = 1;
+                                $i = 1;
                             @endphp
                             @foreach ($categories as $category)
                                 <div class="card my-3 col-6 mx-auto">
@@ -219,19 +219,20 @@
                                         @foreach ($candidates as $candidate)
                                             @if ($candidate->agrupacion == $category->agrupacion)
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="{{'candidate' . $i}}"
-                                                        value="{{$candidate->nombre}}" />
-                                                    <label class="form-check-label"> <b>{{ $candidate->nombre }}</b> ({{ $candidate->organizacion }})
+                                                    <input class="form-check-input" type="radio"
+                                                        name="{{ 'candidate' . $i }}"
+                                                        value="{{ $candidate->nombre }}" />
+                                                    <label class="form-check-label"> <b>{{ $candidate->nombre }}</b>
+                                                        ({{ $candidate->organizacion }})
                                                     </label>
                                                 </div>
                                             @endif
                                         @endforeach
                                     </div>
                                 </div>
-                                                            @php
-                            $i++;
-                            @endphp
-
+                                @php
+                                    $i++;
+                                @endphp
                             @endforeach
 
                             <div class="card my-3 col-6 mx-auto">

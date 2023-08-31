@@ -27,8 +27,6 @@ class VoteListLayout extends Table
         return [
             TD::make('User', __('Usuario'))
                 ->sort(),
-            TD::make('User', __('Usuario'))
-                ->sort(),
             TD::make('Candidate', __('Opcion 1'))
                 ->sort(),
             TD::make('candidate2', __('Opcion 2'))
@@ -42,6 +40,8 @@ class VoteListLayout extends Table
             TD::make('candidate6', __('Opcion 6'))
                 ->sort(),
             TD::make('candidate7', __('Opcion 7'))
+                ->sort(),
+            TD::make('candidate8', __('Opcion 8'))
                 ->sort(),
             TD::make('created_at', __('Fecha'))
                 ->sort(),   
