@@ -37,7 +37,7 @@ class UserListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'User Management';
+        return 'Administrar Usuarios';
     }
 
     /**

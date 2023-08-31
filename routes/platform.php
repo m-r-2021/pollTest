@@ -16,6 +16,7 @@ use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
+use App\Orchid\Screens\VoteScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 
@@ -100,3 +101,4 @@ Route::screen('/charts/examples/charts', ExampleChartsScreen::class)->name('plat
 Route::screen('/cards/examples/cards', ExampleCardsScreen::class)->name('platform.example.cards');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');
+Route::screen('vote', VoteScreen::class)->name('platform.votes');

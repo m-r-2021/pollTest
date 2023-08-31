@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\VoteController;
+use App\Models\Candidate;
 use Illuminate\Support\Facades\Route;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +24,13 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $candidates = Candidate::all();
+
+        $categories = Candidate::all()->unique('agrupacion');
+
+        $limitDateBool = now()->lt(new Carbon('2024-07-03'));
+
+        return view('dashboard', compact('candidates', 'categories', 'limitDateBool'));
     })->name('dashboard');
 });
 
@@ -32,3 +41,5 @@ Route::get('poll', function() {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/storeVote', [VoteController::class, 'store'])->name('sendVote');

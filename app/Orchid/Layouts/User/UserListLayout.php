@@ -57,6 +57,9 @@ class UserListLayout extends Table
                 ->align(TD::ALIGN_RIGHT)
                 ->sort(),
 
+            TD::make('canVote', _('Can Vote'))
+            ->sort(),
+
             TD::make(__('Actions'))
                 ->align(TD::ALIGN_CENTER)
                 ->width('100px')

@@ -30,6 +30,12 @@ class UserEditLayout extends Rows
                 ->required()
                 ->title(__('Email'))
                 ->placeholder(__('Email')),
+
+            Input::make('user.canVote')
+                ->type('text')
+                ->required()
+                ->title(__('Can Vote'))
+                ->placeholder(__('Can Vote')),
         ];
     }
 }
